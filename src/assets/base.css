@@ -1,0 +1,23 @@
+@charset "UTF-8";
+body {
+  background: #333;
+  color: snow;
+}
+
+#contenido {
+  position: relative;
+  left: 0;
+  margin: 10px;
+  border: 7px rgb(177, 155, 114) solid;
+  padding: 30px;
+  width: 100%; /* Cambiamos el ancho a un valor relativo para que se ajuste al ancho de la pantalla */
+  /* Estilos para pantallas pequeñas */
+}
+@media (max-width: 768px) {
+  #contenido {
+    padding: 20px; /* Reducimos el padding para pantallas pequeñas */
+    width: 90%; /* Reducimos el ancho para que quepa en pantallas pequeñas */
+    left: auto; /* Reseteamos la posición "left" para centrar el contenido */
+    right: auto; /* Reseteamos la posición "right" para centrar el contenido */
+  }
+}/*# sourceMappingURL=base.css.map */
