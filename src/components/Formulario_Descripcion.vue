@@ -24,9 +24,14 @@
             <input v-model.trim="Val_Fac" type="number" class="form-control" required placeholder="$131,200 Etc...">
           </div>
           <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-check-label" >Urgente...</label>
+            <input v-model.trim="Fecha" type="date" class="form-control" required >
+          </div>
+          <div class="mb-3">
             <label for="exampleInputPassword1" class="form-check-label">Urgente...</label>
             <input v-model.trim="Urge" type="checkbox" class="form-check-input" >
           </div>
+          
         <button type="submit" class="btn btn-primary">Guardar</button>
         <button @click="Ver_Tabla" type="submit" class="btn btn-primary">Mirar Facturas</button>
         
@@ -58,6 +63,7 @@ export default {
         Depo: '',
         Val_Fac:'',
         Urge:false,
+        Fecha:'',
         Alquileres:[],
         AlquileresFiltrados: [],
         Tabla:false,
@@ -72,6 +78,7 @@ export default {
                 Des_Fac: this.Des_Fac,
                 Depo: this.Depo ,
                 Val_Fac: this.Val_Fac,
+                Fecha: this.Fecha,
                 Urge: this.Urge,
             }
                 this.Alquileres.push(Alquiler)
@@ -80,6 +87,7 @@ export default {
                 this.Des_Fac=''
                 this.Depo=''
                 this.Val_Fac=''
+                this.Fecha
                 this.Urge=false
 
         },

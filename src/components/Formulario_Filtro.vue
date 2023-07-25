@@ -24,7 +24,7 @@ export default {
         Des_Fac:'',
         Depo: '',
         Val_Fac:'',
-        Urge:false,
+        Urge:'',
         Alquileres:[],
         AlquileresFiltrados: [],
         Tabla:false,
@@ -39,6 +39,7 @@ export default {
                 Des_Fac: this.Des_Fac,
                 Depo: this.Depo ,
                 Val_Fac: this.Val_Fac,
+                Fecha: this.Fecha,
                 Urge: this.Urge,
             }
                 this.Alquileres.push(Alquiler)
@@ -47,6 +48,7 @@ export default {
                 this.Des_Fac=''
                 this.Depo=''
                 this.Val_Fac=''
+                this.Fecha
                 this.Urge=false
 
         },
