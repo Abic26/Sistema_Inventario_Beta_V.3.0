@@ -8,9 +8,10 @@ body {
   position: relative;
   left: 0;
   margin: 10px;
+  margin-top: 50px;
   border: 7px rgb(177, 155, 114) solid;
   padding: 30px;
-  width: 100%; /* Cambiamos el ancho a un valor relativo para que se ajuste al ancho de la pantalla */
+  width: 100vh; /* Cambiamos el ancho a un valor relativo para que se ajuste al ancho de la pantalla */
   /* Estilos para pantallas pequeñas */
 }
 @media (max-width: 768px) {

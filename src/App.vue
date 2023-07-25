@@ -1,17 +1,18 @@
 <template>
   <div>
-    <Formulario_Descripcion />
-
+    <Menu />
   </div>
 
 </template>
 <script>
-import Formulario_Descripcion from './components/Formulario_Descripcion.vue';
+import Menu from './components/Menu.vue';
+
 
 export default {
   components :{
-    Formulario_Descripcion
-  }
+    Menu,
+
+}
 }
 
 
