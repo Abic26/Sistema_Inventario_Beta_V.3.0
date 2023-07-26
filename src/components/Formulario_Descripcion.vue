@@ -31,6 +31,10 @@
             <label for="exampleInputPassword1" class="form-check-label">Urgente...</label>
             <input v-model.trim="Urge" type="checkbox" class="form-check-input" >
           </div>
+          <div class="mb-3">
+            <h5 for="imagen">Foto Vestido:</h5>
+            <input type="file" @change="Cargar_Imagen" accept="imagen/*" required>
+          </div>
           
         <button type="submit" class="btn btn-primary">Guardar</button>
         <button @click="Ver_Tabla" type="submit" class="btn btn-primary">Mirar Facturas</button>
@@ -67,7 +71,8 @@ export default {
         Alquileres:[],
         AlquileresFiltrados: [],
         Tabla:false,
-        TablaF:false
+        TablaF:false,
+        imagen:null
 
 
     }),
@@ -80,6 +85,7 @@ export default {
                 Val_Fac: this.Val_Fac,
                 Fecha: this.Fecha,
                 Urge: this.Urge,
+                imagen:this.imagen
             }
                 this.Alquileres.push(Alquiler)
                 localStorage.setItem("Alquileres", JSON.stringify(this.Alquileres))
@@ -89,7 +95,19 @@ export default {
                 this.Val_Fac=''
                 this.Fecha
                 this.Urge=false
+                this.imagen=null
 
+        },
+         Cargar_Imagen(){
+          const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                  this.imagen = reader.result;
+                }
+                console.log(file);
+              reader.readAsDataURL(file);
+      }
         },
               Estado(alquiler, campo){
                     alquiler[campo] = !alquiler[campo] 
@@ -121,13 +139,23 @@ export default {
   },
 
   created() {
-    // Cargar datos del Local Storage al iniciar el componente (si existen)
-    const storedAlquileres = localStorage.getItem('alquileres');
-    if (storedAlquileres) {
-      this.Alquileres = JSON.parse(storedAlquileres);
-      this.AlquileresFiltrados = [...this.Alquileres];
-    }
-  },
+  // Cargar datos del Local Storage al iniciar el componente (si existen)
+  const storedAlquileres = localStorage.getItem('alquileres');
+  if (storedAlquileres) {
+    this.Alquileres = JSON.parse(storedAlquileres);
+
+    // Convertir las imágenes almacenadas a formato base64
+    this.Alquileres.forEach((alquiler) => {
+      if (alquiler.imagen && typeof alquiler.imagen !== 'string') {
+        // Si la imagen no es una cadena (formato base64), la convertimos
+        const imageUrl = URL.createObjectURL(alquiler.imagen);
+        alquiler.imagen = imageUrl;
+      }
+    });
+
+    this.AlquileresFiltrados = [...this.Alquileres];
+  }
+},
 }
 </script>
 <style>
