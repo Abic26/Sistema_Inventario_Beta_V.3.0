@@ -85,6 +85,7 @@ export default {
 
     }),
     methods:{
+      // registro del alquiler y lo guardamos en el arreglo vacio de alquileres
         Alquiler_Registrado(){
             const Alquiler = {
                 Num_Fac: this.Num_Fac,
@@ -106,6 +107,7 @@ export default {
                 this.imagen=null
 
         },
+        // metodo para cargar las imagenes en Base64
          Cargar_Imagen(){
           const file = event.target.files[0];
             if (file) {
@@ -121,12 +123,14 @@ export default {
                     alquiler[campo] = !alquiler[campo] 
 
       },
+      // ver tablas reactivas tabla busqueda y tabla filtrar
       Ver_Tabla(){
         this.Tabla=!this.Tabla
       },
       Filtrar(){
         this.TablaF=!this.TablaF
       },
+      // hace una copia del arreglo de alquileres donde hace push cada vez que guardamos una factura
       filtrarFacturas(numeroFactura) {
       if (numeroFactura === '') {
         this.AlquileresFiltrados = [...this.Alquileres];
