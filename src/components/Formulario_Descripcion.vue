@@ -12,29 +12,37 @@
             <label class="form-label"># De factura</label>
             <input v-model.trim="Num_Fac" type="number" class="form-control" required placeholder="# De factura 1312">
           </div>
+        <br>
           <div>
             <label class="form-label">Descripcion de la factura</label>
             <textarea v-model.trim="Des_Fac" class="form-control form-control-lg" placeholder="¿En que estado esta la factura, Se tiene que lavar, recoger ruedo, alistar, plancar etc.?"></textarea>          
           </div>
+        <br>
           <div>
             <label class="form-label">Deposito</label>
             <input v-model.trim="Depo" type="number" class="form-control" required placeholder="$131,200 Etc...">
-          </div><div>
+          </div>
+        <br>
+          <div>
             <label class="form-label">Valor De La Factura</label>
             <input v-model.trim="Val_Fac" type="number" class="form-control" required placeholder="$131,200 Etc...">
           </div>
+        <br>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-check-label" >Fecha Entrega</label>
             <input v-model.trim="Fecha" type="date" class="form-control" required >
           </div>
+        <br>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-check-label">Urgente...</label>
             <input v-model.trim="Urge" type="checkbox" class="form-check-input" >
           </div>
+        <br>
           <div class="mb-3">
             <h5 for="imagen">Foto Vestido:</h5>
             <input type="file" @change="Cargar_Imagen" accept="imagen/*" required>
           </div>
+        <br>
           
         <button type="submit" class="btn btn-primary">Guardar</button>
         <button @click="Ver_Tabla" type="submit" class="btn btn-primary">Mirar Facturas</button>
