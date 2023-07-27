@@ -24,7 +24,7 @@
             <input v-model.trim="Val_Fac" type="number" class="form-control" required placeholder="$131,200 Etc...">
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-check-label" >Urgente...</label>
+            <label for="exampleInputPassword1" class="form-check-label" >Fecha Entrega</label>
             <input v-model.trim="Fecha" type="date" class="form-control" required >
           </div>
           <div class="mb-3">
