@@ -105,6 +105,7 @@ export default {
                 this.Fecha
                 this.Urge=false
                 this.imagen=null
+                alert('se guardo sus datos  ')
 
         },
         // metodo para cargar las imagenes en Base64

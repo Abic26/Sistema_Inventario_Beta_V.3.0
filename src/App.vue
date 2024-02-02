@@ -1,16 +1,20 @@
 <template>
   <div>
-    <Menu />
+    <login />
+    <ReloadPrompt />
   </div>
 
 </template>
 <script>
-import Menu from './components/Menu.vue';
+import login from './components/login.vue'
+import ReloadPrompt from './components/ReloadPrompt.vue';
+
 
 
 export default {
   components :{
-    Menu,
+    login,
+    ReloadPrompt
 
 }
 }
